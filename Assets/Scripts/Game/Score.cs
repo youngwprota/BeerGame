@@ -8,7 +8,7 @@ public class Score
 
     private int botScore;
 
-    public Score() 
+    public  Score() 
     {
         this.playerScore = 0;
         this.botScore = 0;
