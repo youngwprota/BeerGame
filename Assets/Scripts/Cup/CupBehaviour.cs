@@ -1,19 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CupBehaviour : MonoBehaviour
 {
-
-    private Collider2D ballColider;
-
-    void Awake() 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        ballColider = GetComponent<Collider2D>();
-    }
 
-    void Update() {
     }
-
-    
 }
