@@ -2,35 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score 
+public class Score : MonoBehaviour
 {
-    private int playerScore; 
+    public static int playerScore; 
+    public static int botScore;
 
-    private int botScore;
-
-    public  Score() 
+    void Start()
     {
-        this.playerScore = 0;
-        this.botScore = 0;
+        playerScore = 0;
+        botScore = 0;
     }
 
-    public void IncreasePlayerScore()
+    public void AddPlayerScore()
     {
-        playerScore++;
-    }
-    
-    public void IncreaseBotScore()
-    {
-        botScore++;
+        playerScore += 1;
     }
 
-    public int getPlayerScore()
+    public void AddbotScore()
     {
-        return playerScore;
-    }
-
-    public int getBotScore()
-    {
-        return botScore;
+        botScore +=1 ;
     }
 }

@@ -11,7 +11,6 @@ public class Ball : MonoBehaviour
 
     private PlayerPlatform platformPlayerScript;
     private BotPlatform platformBotScript;
-    private  Score score;
     public bool ballOut; 
 
     private void Awake()
@@ -23,7 +22,6 @@ public class Ball : MonoBehaviour
     {
         platformPlayerScript = playerPlatform.GetComponent<PlayerPlatform>();
         platformBotScript = botPlatform.GetComponent<BotPlatform>();
-        score = new Score();
         AddStartingForce();
     }
 
@@ -52,23 +50,17 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {   
-        if (other.CompareTag("SideWall")) 
-        {
-            ResetBallPosition();
-        }
         if (other.CompareTag("Cup")) 
         {
             if (_rigidbody.position.x < 0)
             {
                 Destroy(other.gameObject);
-                score.IncreaseBotScore();
-                Debug.Log("Bot score: " + score.getBotScore());
+                Score.botScore += 1;
             }
             else
             {
                 Destroy(other.gameObject);
-                score.IncreasePlayerScore();
-                Debug.Log("Player score: " + score.getPlayerScore());
+                Score.playerScore += 1;
             }
         }
     }
