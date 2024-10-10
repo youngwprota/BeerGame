@@ -34,7 +34,7 @@ public class Ball : MonoBehaviour
     }
 
     private void AddStartingForce()
-    {
+    {   
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
         float y = Random.value < 0.5F ? Random.Range(-1.0f, -0.5f) :
         Random.Range(0.5f, 1.0f);
@@ -62,6 +62,9 @@ public class Ball : MonoBehaviour
                 Destroy(other.gameObject);
                 Score.playerScore += 1;
             }
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.position = Vector2.zero;
+            AddStartingForce();
         }
     }
 
