@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro.Examples;
 
 public class Ball : MonoBehaviour
 {
@@ -66,6 +67,29 @@ public class Ball : MonoBehaviour
             _rigidbody.position = Vector2.zero;
             AddStartingForce();
         }
+
+        if (other.CompareTag("SideWall"))
+        {
+            //_rigidbody.velocity = Vector2.zero;
+            //_rigidbody.position = Vector2.zero;
+            //AddStartingForce();
+            //ballOut = true;
+
+            AddStartingForce();
+            ballOut = true;
+            _rigidbody.velocity = Vector2.zero;
+
+            if (_rigidbody.position.x < 0)
+            {
+                //platformPlayerScript.canMove = false;
+                _rigidbody.position = new Vector2(playerPlatform.position.x + 1.0f, playerPlatform.position.y);
+            }
+            else
+            {
+               // platformBotScript.canMove = false;
+                _rigidbody.position = new Vector2(botPlatform.position.x - 1.0f, botPlatform.position.y);
+            }
+        }
     }
 
     private void ResetBallPosition() 
@@ -83,6 +107,7 @@ public class Ball : MonoBehaviour
             platformBotScript.canMove = false; 
             _rigidbody.position = new Vector2(botPlatform.position.x - 1.0f, botPlatform.position.y);
         }
+
     }
 
     private void ShootBall() 

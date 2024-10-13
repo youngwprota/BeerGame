@@ -28,6 +28,12 @@ public class ScoreController : MonoBehaviour
     public void BotWin()
     {
         ClearScore();
+        SceneManager.LoadScene("BotWin");
+    }
+
+    public void QuitToMenu()
+    {
+        ClearScore();
         SceneManager.LoadScene("MainMenu");
     }
 
