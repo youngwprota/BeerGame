@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Ball : MonoBehaviour
 {
-    public float speed = 200.0f;
+    public float speed;
     private Rigidbody2D _rigidbody;
 
     public Transform playerPlatform; 
