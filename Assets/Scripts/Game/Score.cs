@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -20,6 +22,6 @@ public class Score : MonoBehaviour
 
     public void AddbotScore()
     {
-        botScore +=1 ;
+        botScore += 1 ;
     }
 }
