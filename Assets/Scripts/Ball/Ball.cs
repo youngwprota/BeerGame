@@ -37,7 +37,7 @@ public class Ball : MonoBehaviour
     private void AddStartingForce()
     {   
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
-        float y = Random.value < 0.5F ? Random.Range(-1.0f, -0.5f) :
+        float y = Random.value < 0.3F ? Random.Range(-0.55f, 0.5f) :
         Random.Range(0.5f, 1.0f);
         Vector2 direction = new Vector2(x, y);
         _rigidbody.AddForce(direction * this.speed);
@@ -75,20 +75,24 @@ public class Ball : MonoBehaviour
             //AddStartingForce();
             //ballOut = true;
 
-            AddStartingForce();
-            ballOut = true;
-            _rigidbody.velocity = Vector2.zero;
+            //AddStartingForce();
+            //ballOut = true;
+            //_rigidbody.velocity = Vector2.zero;
 
-            if (_rigidbody.position.x < 0)
-            {
-                //platformPlayerScript.canMove = false;
-                _rigidbody.position = new Vector2(playerPlatform.position.x + 1.0f, playerPlatform.position.y);
-            }
-            else
-            {
-               // platformBotScript.canMove = false;
-                _rigidbody.position = new Vector2(botPlatform.position.x - 1.0f, botPlatform.position.y);
-            }
+            //if (_rigidbody.position.x < 0)
+            //{
+            //    //platformPlayerScript.canMove = false;
+            //    _rigidbody.position = new Vector2(playerPlatform.position.x + 1.0f, playerPlatform.position.y);
+            //}
+            //else
+            //{
+            //   // platformBotScript.canMove = false;
+            //    _rigidbody.position = new Vector2(botPlatform.position.x - 1.0f, botPlatform.position.y);
+            //}
+            _rigidbody.velocity = Vector2.zero;
+            _rigidbody.position = Vector2.zero;
+            AddStartingForce();
+
         }
     }
 

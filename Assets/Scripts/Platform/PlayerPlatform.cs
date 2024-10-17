@@ -51,7 +51,7 @@ public class PlayerPlatform : Platform
         {
             Vector2 newPosition = _rigidbody.position + _direction * this.speed * Time.fixedDeltaTime;
 
-            newPosition.y = Mathf.Clamp(newPosition.y, -8.75f, 8.75f);
+            newPosition.y = Mathf.Clamp(newPosition.y, -5.8f, 6.24f);
 
             _rigidbody.MovePosition(newPosition);
         }
